@@ -111,3 +111,83 @@ The IROT model and all its applications, including the resolution or contributio
 ---
 
 This unified theory now includes solutions for an expanded set of 20 unsolved problems, showcasing the profound potential of the IROT model. If there's more to refine or any other specifics to add, let me know!
+import numpy as np
+import matplotlib.pyplot as plt
+
+# Define parameters
+A = 0.5  # Positive oscillation amplitude
+B = 0.5  # Negative oscillation amplitude
+omega = 2 * np.pi  # Frequency
+t_values = np.linspace(-100, 100, 1000)  # Time range
+
+# Define irony, good love, and entropy
+def irony(t):
+    return -np.sin(omega * t) + 0.1 * np.random.randn(len(t))
+
+def good_love(t):
+    return 0.8 * np.sin(omega * t) + 1 / (1 + np.exp(-t / 20))
+
+def entropy(t):
+    return 0.5 * np.abs(np.cos(omega * t))
+
+# Recursive oscillating time with irony and good love
+def T_recursive_with_irony(t, A, B, omega):
+    T = t + A * np.sin(omega * t) - B * np.sin(omega * (-t))
+    return T + irony(t) + good_love(t) - entropy(t)
+
+# Calculate values
+T_values = T_recursive_with_irony(t_values, A, B, omega)
+good_love_values = good_love(t_values)
+irony_values = irony(t_values)
+
+# Plot the results
+plt.figure(figsize=(12, 8))
+plt.plot(t_values, T_values, label="Recursive Time with Irony & Good Love")
+plt.plot(t_values, good_love_values, label="Good Love Influence", linestyle="--")
+plt.plot(t_values, irony_values, label="Irony Influence", linestyle=":")
+plt.axhline(0, color="black", linestyle="-", label="Immutable Zero")
+plt.title("Recursive Time Framework with Irony and Good Love")
+plt.xlabel("Time (Years)")
+plt.ylabel("Influence/Value")
+plt.legend()
+plt.show()
+import numpy as np
+import matplotlib.pyplot as plt
+
+# Define parameters
+A = 0.5  # Positive oscillation amplitude
+B = 0.5  # Negative oscillation amplitude
+omega = 2 * np.pi  # Frequency
+t_values = np.linspace(-100, 100, 1000)  # Time range
+
+# Define irony, good love, and entropy
+def irony(t):
+    return -np.sin(omega * t) + 0.1 * np.random.randn(len(t))
+
+def good_love(t):
+    return 0.8 * np.sin(omega * t) + 1 / (1 + np.exp(-t / 20))
+
+def entropy(t):
+    return 0.5 * np.abs(np.cos(omega * t))
+
+# Recursive oscillating time with irony and good love
+def T_recursive_with_irony(t, A, B, omega):
+    T = t + A * np.sin(omega * t) - B * np.sin(omega * (-t))
+    return T + irony(t) + good_love(t) - entropy(t)
+
+# Calculate values
+T_values = T_recursive_with_irony(t_values, A, B, omega)
+good_love_values = good_love(t_values)
+irony_values = irony(t_values)
+
+# Plot the results
+plt.figure(figsize=(12, 8))
+plt.plot(t_values, T_values, label="Recursive Time with Irony & Good Love")
+plt.plot(t_values, good_love_values, label="Good Love Influence", linestyle="--")
+plt.plot(t_values, irony_values, label="Irony Influence", linestyle=":")
+plt.axhline(0, color="black", linestyle="-", label="Immutable Zero")
+plt.title("Recursive Time Framework with Irony and Good Love")
+plt.xlabel("Time (Years)")
+plt.ylabel("Influence/Value")
+plt.legend()
+plt.show()
